@@ -36,11 +36,11 @@
 		</Compiler>
 		<Unit filename="FiguraGeometrica.cpp" />
 		<Unit filename="FiguraGeometrica.h" />
-		<Unit filename="Ler_arquivo.cpp" />
-		<Unit filename="Ler_arquivo.h" />
-		<Unit filename="PutVoxel.cpp" />
-		<Unit filename="PutVoxel.h" />
+		<Unit filename="ler_arquivo.cpp" />
+		<Unit filename="ler_arquivo.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="putvoxel.cpp" />
+		<Unit filename="putvoxel.h" />
 		<Unit filename="sculptor.cpp" />
 		<Unit filename="sculptor.h" />
 		<Extensions>

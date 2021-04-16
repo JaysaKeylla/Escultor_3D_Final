@@ -6,7 +6,10 @@ class Ler_arquivo :: public FiguraGeometrica
 {
     public:
         Ler_arquivo();
-        virtual ~Ler_arquivo();
+        int Ler_arquivo::getDimx();
+        int Ler_arquivo::getDimy();
+        int Ler_arquivo::getDimz();
+
 
 };
 

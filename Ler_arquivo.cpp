@@ -3,12 +3,7 @@
 
 Ler_arquivo::Ler_arquivo()
 {
-    //ctor
-}
 
-Ler_arquivo::~Ler_arquivo()
-{
-    //dtor
 }
 
 std::vector<FiguraGeometrica*> Ler_arquivo::parse(std::string filename){
@@ -47,6 +42,14 @@ std::vector<FiguraGeometrica*> Ler_arquivo::parse(std::string filename){
     return(figs);
 }
 
-int Ler_arquivo>>getDimx(){
+int Ler_arquivo::getDimx(){
 return dimx;
+}
+
+int Ler_arquivo::getDimy(){
+return dimy
+}
+
+int Ler_arquivo::getDimz(){
+return dimz
 }

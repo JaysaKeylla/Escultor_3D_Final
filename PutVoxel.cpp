@@ -1,4 +1,4 @@
-#include "PutVoxel.h"
+#include "putVoxel.h"
 #include <iostream>
 
 PutVoxel::PutVoxel()
@@ -6,7 +6,7 @@ PutVoxel::PutVoxel()
     //ctor
 }
 
-void Sculptor::putVoxel(int x, int y, int z)
+void Sculptor::putVoxel(int x, int y, int z,float r, float g, float b, float a)
 {
     v[x][y][z].r = r;
     v[x][y][z].g = g;
