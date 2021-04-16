@@ -1,31 +1,33 @@
 #include <iostream>
-#include<cstring>
-#include "sculptor.h"
+#include "figurageometrica.h"
+#include "interpretador.h"
+#include <vector>
 
 using namespace std;
 
-int main(void)
+int main()
 {
     Sculptor *s1;
-    Sculptor s(30,20,30)
-    Sculptor nintendo(30, 10, 50);
 
-    Ler_arquivo parser;
-    std::vector<FiguraGeometrica*> figs;
+    vector<FiguraGeometrica*> figs;
+    Interpretador dados;
+    figs = dados.expor("Teste.txt");
 
-    figs = parser.parse("Escultura.txt");
+    s1 = new Sculptor(dados.getDimx(),dados.getDimy(),dados.getDimz());
 
     for(size_t i=0; i<figs.size(); i++){
-        cout << "Draw" << endl;
+        cout<<"Draw"<<endl;
         figs[i]->draw(*s1);
     }
 
-    s1-> limpavoxels();
+    s1->writeOFF((char*)"teste.off");
 
-    for (size_t i=0; i<figs.size(); i++){
+    for(size_t i=0; i<figs.size(); i++){
         delete figs[i];
     }
+
     delete s1;
 
+    cout << "fim!";
     return 0;
 }

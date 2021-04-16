@@ -1,14 +1,19 @@
 #ifndef FIGURAGEOMETRICA_H
 #define FIGURAGEOMETRICA_H
 
+#include <iostream>
+#include <math.h>
+#include "sculptor.h"
 
-class FiguraGeometrica
-{
-    public:
-        FiguraGeometrica();
-        virtual ~FiguraGeometrica(){}
-        virtual void draw()=0;   //metodo virtual puro
+using namespace std;
 
+class FiguraGeometrica{
+
+protected:
+    float r, g, b, a;
+public:
+    virtual ~FiguraGeometrica(){};
+    virtual void draw(Sculptor &t) = 0;
 };
 
 #endif // FIGURAGEOMETRICA_H

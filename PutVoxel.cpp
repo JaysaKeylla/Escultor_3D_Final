@@ -1,19 +1,16 @@
-#include "putVoxel.h"
-#include <iostream>
+#include "putvoxel.h"
 
-PutVoxel::PutVoxel()
-{
-    //ctor
+putVoxel::putVoxel(int x, int y, int z, float r, float g, float b, float a){
+    this->x = x;
+    this->y = y;
+    this->z = z;
+    this->r = r;
+    this->g = g;
+    this->b = b;
+    this->a = a;
 }
 
-void Sculptor::putVoxel(int x, int y, int z,float r, float g, float b, float a)
-{
-    v[x][y][z].r = r;
-    v[x][y][z].g = g;
-    v[x][y][z].b = b;
-    v[x][y][z].a = a;
-    v[x][y][z].isOn = true;
-}
-void PutVoxel::draw(){
-    std:: cout << "draw PutVoxel\n";
+void putVoxel::draw(Sculptor &t){
+    t.setColor(r,g,b,a);
+    t.putVoxel(x,y,z);
 }

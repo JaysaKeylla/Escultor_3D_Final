@@ -18,3 +18,95 @@
 
 1618526961 c:\users\lucas\desktop\pojeto escultor-p2\projetoescultor\sculptor.h
 
+1618611974 source:d:\programacao\escultor_3d_ii\sculptor.cpp
+	"sculptor.h"
+	<fstream>
+	<iostream>
+	<math.h>
+	<iomanip>
+
+1618611163 d:\programacao\escultor_3d_ii\sculptor.h
+	<iostream>
+	<fstream>
+
+1618611646 source:d:\programacao\escultor_3d_ii\figurageometrica.cpp
+	"figurageometrica.h"
+
+1618611298 d:\programacao\escultor_3d_ii\figurageometrica.h
+	<iostream>
+	<math.h>
+	"sculptor.h"
+
+1618611571 source:d:\programacao\escultor_3d_ii\cutbox.cpp
+	"cutbox.h"
+
+1618611298 d:\programacao\escultor_3d_ii\cutbox.h
+	"figurageometrica.h"
+
+1618611571 source:d:\programacao\escultor_3d_ii\cutellipsoid.cpp
+	"cutellipsoid.h"
+
+1618611407 d:\programacao\escultor_3d_ii\cutellipsoid.h
+	"figurageometrica.h"
+
+1618611571 source:d:\programacao\escultor_3d_ii\cutsphere.cpp
+	"cutsphere.h"
+
+1618611407 d:\programacao\escultor_3d_ii\cutsphere.h
+	"figurageometrica.h"
+
+1618611571 source:d:\programacao\escultor_3d_ii\cutvoxel.cpp
+	"cutvoxel.h"
+
+1618611407 d:\programacao\escultor_3d_ii\cutvoxel.h
+	"figurageometrica.h"
+
+1618611571 source:d:\programacao\escultor_3d_ii\interpretador.cpp
+	"interpretador.h"
+
+1618611407 d:\programacao\escultor_3d_ii\interpretador.h
+	<iostream>
+	<vector>
+	<fstream>
+	<sstream>
+	"figurageometrica.h"
+	"sculptor.h"
+	"putvoxel.h"
+	"putbox.h"
+	"putsphere.h"
+	"putellipsoid.h"
+	"cutvoxel.h"
+	"cutbox.h"
+	"cutsphere.h"
+	"cutellipsoid.h"
+
+1618611407 d:\programacao\escultor_3d_ii\putvoxel.h
+	"figurageometrica.h"
+
+1618611407 d:\programacao\escultor_3d_ii\putbox.h
+	"figurageometrica.h"
+
+1618611407 d:\programacao\escultor_3d_ii\putsphere.h
+	"figurageometrica.h"
+
+1618611407 d:\programacao\escultor_3d_ii\putellipsoid.h
+	"figurageometrica.h"
+
+1618611571 source:d:\programacao\escultor_3d_ii\putbox.cpp
+	"putbox.h"
+
+1618611571 source:d:\programacao\escultor_3d_ii\putellipsoid.cpp
+	"putellipsoid.h"
+
+1618611571 source:d:\programacao\escultor_3d_ii\putsphere.cpp
+	"putsphere.h"
+
+1618611571 source:d:\programacao\escultor_3d_ii\putvoxel.cpp
+	"putvoxel.h"
+
+1618612059 source:d:\programacao\escultor_3d_ii\main.cpp
+	<iostream>
+	"figurageometrica.h"
+	"interpretador.h"
+	<vector>
+

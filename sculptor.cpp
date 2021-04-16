@@ -1,17 +1,21 @@
-/**
-@author Jaysa Barbosa/ Lucas Umbelino
-@brief Sculptor 3D
-*/
-
 #include "sculptor.h"
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <math.h>
 #include <iomanip>
 
-/**
- * Class constructor
- */
+int Sculptor::getDimX(){
+    return nx;
+}
+
+int Sculptor::getDimY(){
+    return ny;
+}
+
+int Sculptor::getDimZ(){
+    return nz;
+}
+
 Sculptor::Sculptor(int _nx, int _ny, int _nz)
 {
     nx = _nx;
@@ -50,9 +54,6 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz)
     }
 }
 
-/**
- * Class destroyer
- */
 Sculptor::~Sculptor()
 {
     std::cout << "Objeto destruido\n";
@@ -73,166 +74,26 @@ Sculptor::~Sculptor()
     delete[] v;
 }
 
-/**
- * Sets the current drawing color
- */
-void Sculptor::setColor(float _r, float _g, float _b, float alpha)
-{
+void Sculptor::putVoxel(int x, int y, int z){
+
+    v[x][y][z].isOn = true;
+    v[x][y][z].r = r;
+    v[x][y][z].g = g;
+    v[x][y][z].b = b;
+    v[x][y][z].a = a;
+}
+
+void Sculptor::cutVoxel(int x, int y, int z){
+    v[x][y][z].isOn = false;
+}
+
+void Sculptor::setColor(float _r, float _g, float _b, float alpha){
     r = _r;
     g = _g;
     b = _b;
     a = alpha;
 }
 
-/**
- * Disables the voxel at the position (x, y, z) (making isOn = false)
- */
-void Sculptor::cutVoxel(int x, int y, int z)
-{
-    v[x][y][z].isOn = false;
-}
-
-/**
- * Activates all voxels in the range x∈ [x0, x1], y∈ [y0, y1], z∈ [z0, z1] and assigns them the current drawing color
- */
-void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1)
-{
-    for (int i = x0; i <= x1; i++)
-    {
-        for (int j = y0; j <= y1; j++)
-        {
-            for (int k = z0; k <= z1; k++)
-            {
-                v[i][j][k].r = r;
-                v[i][j][k].g = g;
-                v[i][j][k].b = b;
-                v[i][j][k].a = a;
-                v[i][j][k].isOn = true;
-            }
-        }
-    }
-}
-
-/**
- * Disables all voxels in the range x∈ [x0, x1], y∈ [y0, y1], z∈ [z0, z1] and assigns them the current drawing color
- */
-void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1)
-{
-    for (int i = x0; i <= x1; i++)
-    {
-        for (int j = y0; j <= y1; j++)
-        {
-            for (int k = z0; k <= z1; k++)
-            {
-                v[i][j][k].isOn = false;
-            }
-        }
-    }
-}
-
-/**
- * Activates all voxels that satisfy the sphere's equation and assigns them the current drawing color (r, g, b, a)
- */
-void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius)
-{
-    int dist = 0;
-    for (int i = 0; i < nx; i++)
-    {
-        for (int j = 0; j < ny; j++)
-        {
-            for (int k = 0; k < nz; k++)
-            {
-                dist = (i - xcenter) * (i - xcenter) + (j - ycenter) * (j - ycenter) + (k - zcenter) * (k - zcenter);
-
-                if (dist <= radius * radius)
-                {
-                    v[i][j][k].r = r;
-                    v[i][j][k].g = g;
-                    v[i][j][k].b = b;
-                    v[i][j][k].a = a;
-                    v[i][j][k].isOn = true;
-                }
-            }
-        }
-    }
-}
-
-/**
- * Disables all voxels that satisfy the sphere equation
- */
-void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius)
-{
-    int dist = 0;
-    for (int i = 0; i < nx; i++)
-    {
-        for (int j = 0; j < ny; j++)
-        {
-            for (int k = 0; k < nz; k++)
-            {
-                dist = (i - xcenter) * (i - xcenter) + (j - ycenter) * (j - ycenter) + (k - zcenter) * (k - zcenter);
-
-                if (dist <= radius * radius)
-                {
-                    v[i][j][k].isOn = false;
-                }
-            }
-        }
-    }
-}
-
-/**
- * Activates all voxels that satisfy the ellipsoid equation and assigns them the current drawing color
- */
-void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz)
-{
-    int dist = 0;
-    for (int i = 0; i < nx; i++)
-    {
-        for (int j = 0; j < ny; j++)
-        {
-            for (int k = 0; k < nz; k++)
-            {
-                dist = (i - xcenter) * (i - xcenter) / (rx * rx) + (j - ycenter) * (j - ycenter) / (ry * ry) + (k - zcenter) * (k - zcenter) / (rz * rz);
-
-                if (dist <= 1)
-                {
-                    v[i][j][k].r = r;
-                    v[i][j][k].g = g;
-                    v[i][j][k].b = b;
-                    v[i][j][k].a = a;
-                    v[i][j][k].isOn = true;
-                }
-            }
-        }
-    }
-}
-
-/**
- * Disables all voxels that satisfy the ellipsoid equation
- */
-void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz)
-{
-    int dist = 0;
-    for (int i = 0; i < nx; i++)
-    {
-        for (int j = 0; j < ny; j++)
-        {
-            for (int k = 0; k < nz; k++)
-            {
-                dist = (i - xcenter) * (i - xcenter) / (rx * rx) + (j - ycenter) * (j - ycenter) / (ry * ry) + (k - zcenter) * (k - zcenter) / (rz * rz);
-
-                if (dist <= 1)
-                {
-                    v[i][j][k].isOn = false;
-                }
-            }
-        }
-    }
-}
-
-/**
- * save the sculpture in the OFF format in the filename file
- */
 void Sculptor::writeOFF(char *filename)
 {
     std::ofstream f;
