@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1617716003 source:c:\users\lucas\desktop\pojeto escultor-p2\projetoescultor\figurageometrica.cpp
+	"FiguraGeometrica.h"
+	<iostream>
+
+1617716003 c:\users\lucas\desktop\pojeto escultor-p2\projetoescultor\figurageometrica.h
+
+1616627339 source:c:\users\lucas\desktop\pojeto escultor-p2\projetoescultor\main.cpp
+	<iostream>
+	"sculptor.h"
+
+1617713701 c:\users\lucas\desktop\pojeto escultor-p2\projetoescultor\putvoxel.h
+	"FiguraGeometrica.h"
+
+1617713701 source:c:\users\lucas\desktop\pojeto escultor-p2\projetoescultor\putvoxel.cpp
+	"PutVoxel.h"
+	<iostream>
+
+1618526961 c:\users\lucas\desktop\pojeto escultor-p2\projetoescultor\sculptor.h
+
